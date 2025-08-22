@@ -44,14 +44,19 @@ export default function Loader() {
         });
     }, []);
 
+    const isMobile = window.innerWidth < 768;
+    const isTablet = window.innerWidth < 1440;
+
+    const lenght = isMobile && 2 || isTablet && 6 || 8
+
     return (
         <div
             ref={containerRef}
             className="fixed inset-0 flex overflow-hidden bg-black"
         >
-            {Array.from({ length: 8 }).map((_, i) => (
+            {Array.from({ length: lenght }).map((_, i) => (
                 <div key={i} className="band flex-1 relative overflow-hidden mx-1">
-                    <div className="track absolute -top-[200%] left-0 right-0 flex flex-col gap-2.5">
+                    <div className="track absolute -top-[100%] left-0 right-0 flex flex-col gap-2.5">
                         {Array.from({ length: 15 }).map((_, j) => {
                             const index = (i * 6 + j) % images.length;
                             return (
@@ -71,7 +76,7 @@ export default function Loader() {
                 src="/logo-sakura-white.png"
                 alt="logo"
                 className="logo absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
-                           w-100 h-100 object-contain z-50"
+                           w-50 h-50 md:w-100 md:h-100 object-contain z-50"
             />
         </div>
     );
