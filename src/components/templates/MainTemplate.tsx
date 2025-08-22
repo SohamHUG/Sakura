@@ -5,7 +5,7 @@ const MainTemplate = () => {
         <>
             {/* <header>
             </header> */}
-            <main className="max-w-screen overflow-x-hidden">
+            <main className="w-screen max-w-screen overflow-x-hidden">
                 <Outlet />
             </main>
             {/* <footer>

@@ -20,21 +20,21 @@ export default function HomePage() {
         if (!loading && homeRef.current) {
             gsap.fromTo(
                 homeRef.current,
-                { y: -1000, opacity: 1 },
+                { y: 1000, opacity: 1 },
                 { y: 0, opacity: 1, duration: 2, ease: "power3.out" }
             );
 
             gsap.to(loaderRef.current, {
                 opacity: 0,
                 duration: 0.8,
-                delay: 1.5, 
-                onComplete: () => setShowLoader(false), 
+                delay: 1.5,
+                onComplete: () => setShowLoader(false),
             });
         }
     }, [loading]);
 
     return (
-        <div className="w-full h-full relative">
+        <div className={`w-full h-full relative ${showLoader && 'overflow-hidden'}`}>
             {showLoader && (
                 <div ref={loaderRef} className="absolute inset-0 z-10">
                     <Loader />
@@ -43,10 +43,11 @@ export default function HomePage() {
 
             <div
                 ref={homeRef}
-                className="bg-black flex flex-col w-full min-h-screen justify-center items-center z-20 relative"
+                className={`bg-black flex flex-col min-w-full min-h-screen justify-center items-center z-20 relative`}
                 style={{ opacity: 0 }}
             >
                 <h1 className="text-white">ACCUEIL</h1>
+                
             </div>
         </div>
     );
