@@ -18,9 +18,9 @@ const SideBar = forwardRef<HTMLDivElement>((props, ref) => {
                         Sakura, l’art des saveurs japonaises <br />
                         Tradition et raffinement à chaque bouchée<br /><br />
                         Lundi au Vendredi: <br />
-                        12h – 14h30 / 19h – 23h<br /><br />
+                        11h – 14h30 / 19h – 23h<br /><br />
                         Samedi & Dimanche: <br />
-                        12h – 15h / 19h – 23h30
+                        11h – 23h30
                     </p>
                     <a href="#" className="text-main font-kaisei font-bold underline">Réserver une table</a>
 
