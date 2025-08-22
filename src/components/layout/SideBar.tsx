@@ -7,7 +7,7 @@ const SideBar = forwardRef<HTMLDivElement>((props, ref) => {
     return (
         <div
             ref={ref}
-            className="bg-white min-h-screen h-screen w-[30%] fixed top-0 bottom-0 left-0 sidebar flex flex-col justify-center items-center p-10 z-15"
+            className="bg-white min-h-screen h-screen w-[30%] fixed top-0 bottom-0 left-0 sidebar flex flex-col justify-center items-center p-10 z-15 opacity-0"
         >
             <div className="flex flex-col justify-between">
                 <div className="flex flex-col gap-8">

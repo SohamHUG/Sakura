@@ -10,8 +10,8 @@ const MainTemplate = () => {
     useEffect(() => {
         gsap.fromTo(
             sidebarRef.current,
-            { x: -800 },
-            { x: 0, duration: 1.5, ease: "power3.out", delay: 5.3 }
+            { x: -800, opacity: 1 },
+            { x: 0, opacity: 1, duration: 1.5, ease: "power3.out", delay: 5.3 }
         );
     }, []);
 
