@@ -3,6 +3,7 @@ import Loader from "../components/layout/Loader";
 import gsap from "gsap";
 import { useDispatch, useSelector } from "react-redux";
 import { setLoaderPlayed } from "../store/slice/loaderSlice";
+import Hero from "../components/modules/Hero";
 
 
 export default function HomePage() {
@@ -40,7 +41,10 @@ export default function HomePage() {
                     opacity: 0,
                     duration: 0.1,
                     // delay: 1.5,
-                    onComplete: () => setShowLoader(false),
+                    onComplete: () => {
+                        setShowLoader(false)
+                        // homeRef.current?.querySelector('.home-container')?.classList.add("w-[70%]");
+                    },
                 }, ">")
         }
     }, [loading]);
@@ -55,9 +59,12 @@ export default function HomePage() {
 
             <div
                 ref={homeRef}
-                className={`bg-black min-w-screen min-h-screen relative z-10`}
+                className={`bg-black min-w-screen min-h-screen relative z-10 flex items-center justify-center`}
                 style={{ opacity: loaderPlayed ? 1 : 0 }}
             >
+                <section className="home-container min-h-full w-[70%] absolute right-0 flex items-center">
+                    <Hero />
+                </section>
 
 
             </div>
