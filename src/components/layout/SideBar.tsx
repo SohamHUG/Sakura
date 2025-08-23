@@ -19,14 +19,16 @@ const SideBar = forwardRef<HTMLDivElement>((props, ref) => {
                         <img src="/logo-sakura1.png" alt="logo sakura" className="w-30" />
                     </NavLink>
                     <p className="font-noto font-extralight">
-                        L’art des saveurs japonaises <br />
-                        Tradition et raffinement à chaque bouchée<br /><br />
+                        {/* L’art des saveurs japonaises <br />
+                        Tradition et raffinement à chaque bouchée<br /><br /> */}
                         Lundi au Vendredi: <br />
                         11h – 14h30 / 19h – 23h<br /><br />
-                        Samedi & Dimanche: <br />
-                        11h – 23h30
+                        Samedi: <br />
+                        11h – 23h30<br /> <br />
+                        Dimanche: <br/>
+                        11h-14h30
                     </p>
-                    <a href="#" className="text-main font-kaisei font-bold underline">Instagram</a>
+                    <a href="#" className="text-main font-kaisei font-bold underline">Réserver une table</a>
 
                     <NavBar />
                 </div>
@@ -34,7 +36,7 @@ const SideBar = forwardRef<HTMLDivElement>((props, ref) => {
                 <div className="">
                     <p className="font-medium">サクラ</p> <br />
                     <p className="font-noto font-extralight">
-                        12 Rue des Cerisiers <br/>
+                        12 Rue des Cerisiers <br />
                         75004 Paris, France
                     </p>
                 </div>

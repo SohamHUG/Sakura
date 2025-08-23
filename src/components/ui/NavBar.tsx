@@ -10,7 +10,7 @@ const NavBar = () => {
 
     return (
         <>
-            <nav className="flex flex-row justify-center items-center text-11 gap-4 border border-black/20 py-4 my-5 font-kaisei max-w-full w-full text-md">
+            <nav className="flex flex-row justify-center items-center text-11 gap-4 border border-black/20 py-4 px-6 my-5 font-kaisei max-w-full w-full text-md">
                 <NavLink to={'/'}
                     className={` ${isActive("/") ? "font-bold" : "font-light hover:font-bold"
                         } duration-300`}
