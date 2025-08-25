@@ -2,6 +2,7 @@ import { forwardRef } from "react";
 import { NavLink } from "react-router-dom";
 import NavBar from "../ui/NavBar";
 import { useSelector } from "react-redux";
+import { MainButton } from "../ui/MainButton";
 
 const SideBar = forwardRef<HTMLDivElement>((props, ref) => {
     console.log(props)
@@ -18,19 +19,19 @@ const SideBar = forwardRef<HTMLDivElement>((props, ref) => {
                     <NavLink to={'/'}>
                         <img src="/logo-sakura1.png" alt="logo sakura" className="w-30" />
                     </NavLink>
+                    <NavBar />
                     <p className="font-noto font-extralight">
-                        {/* L’art des saveurs japonaises <br />
-                        Tradition et raffinement à chaque bouchée<br /><br /> */}
                         Lundi au Vendredi: <br />
                         11h – 14h30 / 19h – 23h<br /><br />
                         Samedi: <br />
                         11h – 23h30<br /> <br />
-                        Dimanche: <br/>
+                        Dimanche: <br />
                         11h-14h30
                     </p>
-                    <a href="#" className="text-main font-kaisei font-bold underline">Réserver une table</a>
-
-                    <NavBar />
+                    {/* <a href="#" className="text-main font-kaisei font-bold underline">Réserver une table</a> */}
+                    <MainButton>
+                        Réserver une table
+                    </MainButton>
                 </div>
 
                 <div className="">

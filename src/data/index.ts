@@ -1,1 +1,2 @@
-export * from './loaderImg'
+export * from './images';
+export * from './svg';

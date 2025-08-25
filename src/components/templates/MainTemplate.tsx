@@ -24,7 +24,7 @@ const MainTemplate = () => {
         <>
             {/* <header>
             </header> */}
-            <main className="w-screen max-w-screen h-screen flex">
+            <main className="w-screen max-w-screen h-screen flex overflow-x-hidden">
                 <SideBar ref={sidebarRef} />
 
                 <Outlet />
