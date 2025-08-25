@@ -1,8 +1,9 @@
-import { Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import SideBar from "../layout/SideBar";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { useSelector } from "react-redux";
+import NavBar from "../ui/NavBar";
 
 const MainTemplate = () => {
 
@@ -24,8 +25,18 @@ const MainTemplate = () => {
         <>
             {/* <header>
             </header> */}
-            <main className="w-screen max-w-screen h-screen flex overflow-x-hidden">
-                <SideBar ref={sidebarRef} />
+            <main className="w-screen max-w-screen h-screen flex sm:flex-col overflow-x-hidden items-center">
+                <div className="hidden lg:block">
+                    <SideBar ref={sidebarRef} />
+                </div>
+
+                <div className="lg:hidden fixed top-0 left-0 z-20 flex items-center justify-center w-full">
+                    {/* <NavLink to={'/'}>
+                        <img src="/logo-sakura-white.png" alt="logo sakura" className="w-15" />
+                    </NavLink> */}
+
+                    <NavBar />
+                </div>
 
                 <Outlet />
             </main>

@@ -70,9 +70,9 @@ const Hero = () => {
     return (
         <div ref={heroRef} className="w-full z-11 flex flex-col min-h-screen justify-between">
 
-            <div className="flex flex-1 flex-col gap-10 items-center justify-center">
+            <div className="flex flex-1 flex-col gap-5 lg:gap-10 items-center justify-center">
                 {shouldDraw && <AnimatedSVG svg={sakuraKatakana} />}
-                <p className="headline opacity-0 text-white font-kaisei text-2xl ">
+                <p className="headline opacity-0 text-white font-kaisei lg:text-2xl ">
                     Une expérience qui éveille les sens
                 </p>
 
