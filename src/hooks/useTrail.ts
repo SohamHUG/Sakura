@@ -53,16 +53,16 @@ export const useTrail = (
             isCursorInContainer = false,
             isTouching = false;
         let lastRemovalTime = 0,
-            lastTouchImageTime = 0,
-            lastScrollTime = 0,
+            // lastTouchImageTime = 0,
+            // lastScrollTime = 0,
             lastMoveTime = Date.now();
-        let isScrolling = false,
-            scrollTicking = false;
+        let isScrolling = false;
+            // scrollTicking = false;
         let smoothedSpeed = 0,
             maxSpeed = 0;
-        let currentEffect = "flame";
+        // let currentEffect = "flame";
         let imageIndex = 0;
-        const imagePool: HTMLDivElement[] = [];
+        // const imagePool: HTMLDivElement[] = [];
 
         // Helper functions (adaptées du script original)
         const isInContainer = (x: number, y: number) => {
@@ -107,26 +107,26 @@ export const useTrail = (
             return smoothedSpeed;
         };
 
-        const createImageElement = () => {
-            if (imagePool.length > 0) {
-                return imagePool.pop()!;
-            }
-            const element = document.createElement("div");
-            element.className = "trail-image";
-            return element;
-        };
+        // const createImageElement = () => {
+        //     if (imagePool.length > 0) {
+        //         return imagePool.pop()!;
+        //     }
+        //     const element = document.createElement("div");
+        //     element.className = "trail-image";
+        //     return element;
+        // };
 
-        const returnToPool = (element: HTMLDivElement) => {
-            if (element.parentNode) {
-                element.parentNode.removeChild(element);
-            }
-            element.innerHTML = "";
-            element.style.cssText = "";
-            element.className = "trail-image";
-            if (imagePool.length < 20) {
-                imagePool.push(element);
-            }
-        };
+        // const returnToPool = (element: HTMLDivElement) => {
+        //     if (element.parentNode) {
+        //         element.parentNode.removeChild(element);
+        //     }
+        //     element.innerHTML = "";
+        //     element.style.cssText = "";
+        //     element.className = "trail-image";
+        //     if (imagePool.length < 20) {
+        //         imagePool.push(element);
+        //     }
+        // };
 
         const createImage = (speed = 0.5) => {
             const imageSrc = images[imageIndex];
