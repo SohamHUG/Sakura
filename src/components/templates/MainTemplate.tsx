@@ -39,7 +39,7 @@ const MainTemplate = () => {
     return (
         <>
             <header>
-                <div ref={navTabletRef} className="nav-mobile lg:hidden fixed top-0 left-0 z-20 w-full pt-3">
+                <div ref={navTabletRef} className="nav-mobile lg:hidden fixed top-0 left-0 z-20 w-full pt-3 opacity-0">
                     <div className="w-[90%] mx-auto flex items-center justify-between">
                         <NavLink to={'/'} className={''}>
                             <img src="/logo-sakura-white.png" alt="logo sakura" className="w-20 md:w-25" />
@@ -55,7 +55,7 @@ const MainTemplate = () => {
                     </div>
                 </div>
 
-                <div ref={navMobileRef} className="fixed bottom-2 md:hidden w-full flex justify-center z-20">
+                <div ref={navMobileRef} className="fixed bottom-2 md:hidden w-full flex justify-center z-20 opacity-0">
                     <NavBar />
                 </div>
 
