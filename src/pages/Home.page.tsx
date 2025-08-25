@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { useDispatch, useSelector } from "react-redux";
 import { setLoaderPlayed } from "../store/slice/loaderSlice";
 import Hero from "../components/modules/Hero";
+import { useTrail } from "../hooks/useTrail";
 
 
 export default function HomePage() {
@@ -11,6 +12,9 @@ export default function HomePage() {
     const [showLoader, setShowLoader] = useState(true);
     const homeRef = useRef<HTMLDivElement>(null);
     const loaderRef = useRef(null);
+    const speedIndicatorRef = useRef<HTMLDivElement>(null);
+
+    useTrail(homeRef, speedIndicatorRef) // l'arguement refObject<HTMLDivElement | null> n'est pas attribuable 
 
     const loaderPlayed = useSelector((state: any) => state.loader.played);
     const dispatch = useDispatch();
@@ -62,8 +66,9 @@ export default function HomePage() {
                 className={`bg-black min-w-screen min-h-screen relative z-10 flex items-center justify-center`}
                 style={{ opacity: loaderPlayed ? 1 : 0 }}
             >
-                <section className="home-container min-h-full w-[70%] absolute right-0 flex items-center">
+                <section className="home-container min-h-screen h-screen w-[70%] absolute right-0 flex items-center">
                     <Hero />
+                    <div ref={speedIndicatorRef} className="speed-indicator absolute top-2 right-2 text-white opacity-0 text-sm"></div>
                 </section>
 
 
