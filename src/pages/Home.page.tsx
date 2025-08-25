@@ -1,10 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import Loader from "../components/layout/Loader";
-import gsap from "gsap";
+// import gsap from "gsap";
 import { useDispatch, useSelector } from "react-redux";
 import { setLoaderPlayed } from "../store/slice/loaderSlice";
 import Hero from "../components/modules/Hero";
 import { useTrail } from "../hooks/useTrail";
+import { firstTimeline } from "../Utils/firstTimeline";
 
 
 export default function HomePage() {
@@ -18,6 +19,8 @@ export default function HomePage() {
 
     const loaderPlayed = useSelector((state: any) => state.loader.played);
     const dispatch = useDispatch();
+
+
 
     useEffect(() => {
         if (!loaderPlayed) {
@@ -35,12 +38,14 @@ export default function HomePage() {
     }, [dispatch]);
 
     useEffect(() => {
-        const tl = gsap.timeline();
+        // const tl = gsap.timeline();
         if (!loading && homeRef.current) {
-            tl.fromTo(
-                homeRef.current,
-                { y: 1000, opacity: 1 },
-                { y: 0, opacity: 1, duration: 1.8, ease: "power3.out" })
+            // tl
+            firstTimeline.play()
+                .fromTo(
+                    homeRef.current,
+                    { y: 1000, opacity: 1 },
+                    { y: 0, opacity: 1, duration: 1.8, ease: "power3.out" })
                 .to(loaderRef.current, {
                     opacity: 0,
                     duration: 0.1,
@@ -66,7 +71,7 @@ export default function HomePage() {
                 className={`bg-black min-w-screen min-h-screen relative z-10 flex items-center justify-center`}
                 style={{ opacity: loaderPlayed ? 1 : 0 }}
             >
-                <section className="home-container min-h-screen h-screen w-[90%] mx-auto lg:mx-0 lg:w-[70%] absolute left-auto lg:right-0">
+                <section className="home-container min-h-screen h-screen w-[90%] mx-auto lg:mx-0 lg:w-[70%] absolute left-auto lg:right-0 z-11">
                     <Hero />
                     <div ref={speedIndicatorRef} className="speed-indicator absolute top-2 right-2 text-white opacity-0 text-sm"></div>
                 </section>

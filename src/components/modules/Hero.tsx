@@ -2,12 +2,13 @@ import AnimatedSVG from "./AnimatedSVG"
 import { sakuraKatakana } from "../../data"
 import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
-import gsap from "gsap";
+// import gsap from "gsap";
 import { MainButton } from "../ui/MainButton";
 // import { useTrail } from "../../hooks/useTrail";
 import { GoArrowRight, GoArrowDown } from "react-icons/go";
 import { SecondaryButton } from "../ui/SecondaryButton";
 import { useNavigate } from "react-router-dom";
+import { firstTimeline } from "../../Utils/firstTimeline";
 
 
 const Hero = () => {
@@ -27,7 +28,7 @@ const Hero = () => {
 
 
     useEffect(() => {
-        const tl = gsap.timeline();
+        // const tl = gsap.timeline();
         const headline = heroRef.current?.querySelectorAll<HTMLElement>('.headline') || []
         const button = heroRef.current?.querySelectorAll<HTMLElement>('.button-main') || []
         const buttonSecond = heroRef.current?.querySelectorAll<HTMLElement>('.button-second') || []
@@ -47,10 +48,12 @@ const Hero = () => {
         }
 
         if (shouldDraw) {
-            tl.fromTo(
-                headline,
-                { y: 20, opacity: 0 },
-                { y: 0, opacity: 1, duration: .5, ease: "power3.out", delay: 0.6 })
+            // tl
+            firstTimeline.play()
+                .fromTo(
+                    headline,
+                    { y: 20, opacity: 0 },
+                    { y: 0, opacity: 1, duration: .5, ease: "power3.out", }, '>')
                 .fromTo(
                     button,
                     { y: 20, opacity: 0 },
@@ -58,7 +61,7 @@ const Hero = () => {
                 .fromTo(
                     buttonSecond,
                     { scale: 0.8, opacity: 0 },
-                    { scale: 1, opacity: 1, duration: .4, ease: "power3.out", }, )
+                    { scale: 1, opacity: 1, duration: .4, ease: "power3.out", },)
                 .fromTo(
                     aboutTxt,
                     { y: 20, opacity: 0 },
@@ -72,7 +75,7 @@ const Hero = () => {
 
             <div className="flex flex-1 flex-col gap-5 lg:gap-10 items-center justify-center">
                 {shouldDraw && <AnimatedSVG svg={sakuraKatakana} />}
-                <p className="headline opacity-0 text-white font-kaisei lg:text-2xl ">
+                <p className="headline opacity-0 text-white font-kaisei md:text-2xl ">
                     Une expérience qui éveille les sens
                 </p>
 
