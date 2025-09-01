@@ -6,6 +6,7 @@ import { setLoaderPlayed } from "../store/slice/loaderSlice";
 import Hero from "../components/modules/Hero";
 import { useTrail } from "../hooks/useTrail";
 import { firstTimeline } from "../Utils/firstTimeline";
+import { About } from "../components/modules/About";
 
 
 export default function HomePage() {
@@ -68,14 +69,21 @@ export default function HomePage() {
 
             <div
                 ref={homeRef}
-                className={`bg-black min-w-screen min-h-screen relative z-10 flex items-center justify-center`}
+                className={`bg-black min-w-screen min-h-screen relative z-10 flex flex-col items-center justify-center`}
                 style={{ opacity: loaderPlayed ? 1 : 0 }}
             >
-                <section className="home-container min-h-screen h-screen w-[90%] mx-auto lg:mx-0 lg:w-[70%] absolute left-auto lg:right-0 z-11">
-                    <Hero />
-                    <div ref={speedIndicatorRef} className="speed-indicator absolute top-2 right-2 text-white opacity-0 text-sm"></div>
-                </section>
+                <div ref={speedIndicatorRef} className="speed-indicator absolute top-2 right-2 text-white opacity-0 text-sm"></div>
 
+                <div className="home-container min-h-screen h-screen w-[90%] mx-auto lg:mx-0 lg:w-[70%] absolute left-auto lg:right-0 z-11">
+                    <Hero />
+
+
+                    <About />
+                </div>
+
+                {/* <div>
+                    <About />
+                </div> */}
 
             </div>
         </div>

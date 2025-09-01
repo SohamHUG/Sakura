@@ -32,8 +32,19 @@ const MainTemplate = () => {
                 { y: 20, opacity: 0 },
                 { y: 0, opacity: 1, duration: 1.5, ease: "power3.out", delay: 6.3 }
             )
-        }
+        } else {
+            gsap.fromTo(
+                navTabletRef.current,
+                { y: -20, opacity: 0 },
+                { y: 0, opacity: 1, duration: 1.5, ease: "power3.out", delay: 1.3 }
+            )
 
+            gsap.fromTo(
+                navMobileRef.current,
+                { y: 20, opacity: 0 },
+                { y: 0, opacity: 1, duration: 1.5, ease: "power3.out", delay: 1.3 }
+            )
+        }
     }, [loaderPlayed]);
 
     return (
@@ -63,8 +74,12 @@ const MainTemplate = () => {
                     <SideBar ref={sidebarRef} />
                 </div>
             </header>
-            <main className="w-screen max-w-screen h-screen flex sm:flex-col overflow-x-hidden items-center">
-                <Outlet />
+            <main id="smooth-wrapper" className="w-screen max-w-screen h-screen flex sm:flex-col overflow-x-hidden items-center">
+                <div>
+                    <div id="smooth-content" className="w-full">
+                        <Outlet />
+                    </div>
+                </div>
             </main>
             {/* <footer>
             </footer> */}
