@@ -52,7 +52,7 @@ export default function Loader() {
     return (
         <div
             ref={containerRef}
-            className="fixed inset-0 flex overflow-hidden bg-black"
+            className="fixed inset-0 flex overflow-hidden bg-black max-w-screen"
         >
             {Array.from({ length: lenght }).map((_, i) => (
                 <div key={i} className="band flex-1 relative overflow-hidden mx-1">

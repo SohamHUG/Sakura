@@ -3,27 +3,31 @@ import { imagesFood } from "../../data"
 import gsap from "gsap";
 import ScrollSmoother from "gsap/dist/ScrollSmoother";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 export const About = () => {
     const sectionRef = useRef<HTMLDivElement>(null)
 
-    useEffect(() => {
-        // const smoother = 
-        ScrollSmoother.create({
-            content: sectionRef.current,
-            smooth: 1,
-            effects: true,
-            normalizeScroll: true
-        });
+    // useEffect(() => {
+    //     // const smoother = 
+    //     ScrollSmoother.create({
+    //         content: sectionRef.current,
+    //         smooth: 3,
+    //         effects: true,
+    //         normalizeScroll: true
+    //     });
 
-        // smoother.effects("img", { speed: "auto" });
-    }, []);
+    //     return () => {
+    //         if (ScrollSmoother.get()) ScrollSmoother.get()?.kill();
+    //     };
+
+    //     // smoother.effects("img", { speed: "auto" });
+    // }, []);
 
     return (
-        <section ref={sectionRef} id="smooth-content" className="bg-black text-white max-w-full flex flex-col gap-30 py-10">
+        <section ref={sectionRef} className="bg-black text-white w-full max-w-full flex flex-col gap-30 py-10">
             <article className="flex justify-around items-center h-[50vh]">
                 <div className="w-[25%]">
                     <h2 className="uppercase font-kaisei text-2xl mb-2 text-white/90">
@@ -121,7 +125,7 @@ export const About = () => {
 
             </article>
 
-            <div className="w-full h-[85vh]"></div>
+            {/* <div className="w-full h-[85vh]"></div> */}
         </section>
     )
 }

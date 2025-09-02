@@ -34,17 +34,21 @@ const Hero = () => {
         const buttonSecond = heroRef.current?.querySelectorAll<HTMLElement>('.button-second') || []
         const aboutTxt = heroRef.current?.querySelectorAll<HTMLElement>('.about-txt') || []
 
-        if (!loaderPlayed) {
-            const timer = setTimeout(() => {
-                setShouldDraw(true)
-            }, 5500);
+        // if (!loaderPlayed) {
+        //     const timer = setTimeout(() => {
+        //         setShouldDraw(true)
+        //     }, 5500);
 
-            return () => {
-                clearTimeout(timer);
-                setShouldDraw(false);
-            };
-        } else {
-            setShouldDraw(true)
+        //     return () => {
+        //         clearTimeout(timer);
+        //         setShouldDraw(false);
+        //     };
+        // } else {
+        //     setShouldDraw(true)
+        // }
+
+        if (loaderPlayed) {
+            setShouldDraw(true);
         }
 
         if (shouldDraw) {
@@ -66,10 +70,10 @@ const Hero = () => {
                     aboutTxt,
                     { y: 20, opacity: 0 },
                     { y: 0, opacity: 1, duration: .2, ease: "power3.out", }, '>+1')
-                
+
         }
 
-    }, [shouldDraw]);
+    }, [loaderPlayed, shouldDraw]);
 
     return (
         <div ref={heroRef} className="w-full z-11 flex flex-col min-h-screen justify-between">

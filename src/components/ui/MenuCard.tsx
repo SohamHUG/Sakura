@@ -7,7 +7,7 @@ const formatPrice = (n: number) =>
 
 function TagPill({ label }: { label: string }) {
     return (
-        <span className="inline-flex items-center rounded-full border px-2 py-0.5 text-xs tracking-wide shadow-sm">
+        <span className="inline-flex items-center rounded-full border px-2 py-0.5 text-xs tracking-wide shadow-sm font-kaisei">
             {label}
         </span>
     );
@@ -29,13 +29,13 @@ export function MenuCard({ item }: { item: MenuItem }) {
         <article className="group relative overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-950/60 p-4 shadow-sm transition hover:shadow-xl">
             <div className="flex items-start justify-between gap-3">
                 <div className="min-w-0">
-                    <h3 className="truncate text-lg font-medium tracking-tight">
+                    <h3 className="truncate text-lg font-semibold tracking-tight font-kaisei">
                         {item.name}
                         {item.spicyLevel ? <SpiceDots level={item.spicyLevel} /> : null}
                     </h3>
                     {item.jp ? <p className="text-xs text-neutral-400">{item.jp}</p> : null}
                     {item.description ? (
-                        <p className="mt-1 line-clamp-3 text-sm text-neutral-300">{item.description}</p>
+                        <p className="mt-1 line-clamp-3 text-sm text-neutral-300 font-noto">{item.description}</p>
                     ) : null}
 
                     {/* Tags */}
