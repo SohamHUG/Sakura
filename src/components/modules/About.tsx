@@ -1,15 +1,7 @@
-import { useRef } from "react"
-// import InfiniteCards from "./InfiniteCards"
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-
-gsap.registerPlugin(ScrollTrigger)
+import DraggableCarousel from "./DraggableCarousel"
+import { imagesFood } from "../../data"
 
 export const About = () => {
-
-    const scrollRef = useRef<HTMLDivElement>(null)
-
-
     return (
         <section className="bg-black text-white max-w-full flex flex-col gap-60">
             <article className="flex justify-around items-center">
@@ -89,19 +81,24 @@ export const About = () => {
                 </div>
             </article>
 
-            <article ref={scrollRef} className="w-full h-screen overflow-hidden relative">
-                <div className="horizontal-scroll flex gap-6 h-full items-center absolute top-[10%] left-[35%] transform -translate-x-1/2">
-                    <img src="/img/img1.jpg" className="w-[30vw] h-[30vw] object-cover rounded" />
-                    <img src="/img/img2.jpg" className="w-[30vw] h-[30vw] object-cover rounded" />
-                    <img src="/img/img3.jpg" className="w-[30vw] h-[30vw] object-cover rounded" />
-                    <img src="/img/img4.jpg" className="w-[30vw] h-[30vw] object-cover rounded" />
-                    <img src="/img/img4.jpg" className="w-[30vw] h-[30vw] object-cover rounded" />
-                    <img src="/img/img4.jpg" className="w-[30vw] h-[30vw] object-cover rounded" />
-                    <img src="/img/img4.jpg" className="w-[30vw] h-[30vw] object-cover rounded" />
-                    <img src="/img/img4.jpg" className="w-[30vw] h-[30vw] object-cover rounded" />
-                </div>
+            <article className="w-full h-[50vh] overflow-hidden relative">
+                {/* <h2 className="uppercase font-kaisei text-4xl mb-2 text-white/90 m-5">Sakura Restaurant</h2> */}
+                <p className="font-noto text-xl font-extralight text-white/80 m-5">
+                    Retrouvez-nous au 12 Rue des Cerisiers, Paris 75004, et laissez-vous emporter par l’élégance des saveurs japonaises
+                </p>
+                <DraggableCarousel
+                    items={
+                        imagesFood.map((src, i) =>
+                            <img key={i} src={src}
+                                className="h-full w-full object-cover rounded "
+                            />
+                        )
+                    }
+                    itemWidth={400}
+                    gap={16}
+                    height={350}
+                />
 
-                {/* <InfiniteCards items={['Card 1', 'Card 2', 'Card 3', 'Card 4', 'Card 5', 'Card 6', 'Card 7']} /> */}
             </article>
         </section>
     )

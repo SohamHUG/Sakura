@@ -68,13 +68,13 @@ export default function HomePage() {
             )}
 
             <div
-                // ref={homeRef}
+                ref={homeRef}
                 className={`bg-black min-w-screen min-h-screen relative z-10 flex flex-col items-center justify-center`}
                 style={{ opacity: loaderPlayed ? 1 : 0 }}
             >
                 <div ref={speedIndicatorRef} className="speed-indicator absolute top-2 right-2 text-white opacity-0 text-sm"></div>
 
-                <div ref={homeRef} className="home-container min-h-screen h-screen w-[90%] mx-auto lg:mx-0 lg:w-[70%] absolute left-auto lg:right-0 z-11">
+                <div className="home-container min-h-screen h-screen w-[90%] mx-auto lg:mx-0 lg:w-[70%] absolute left-auto lg:right-0 z-11">
                     <Hero />
 
 
