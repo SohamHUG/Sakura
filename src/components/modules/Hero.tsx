@@ -66,6 +66,7 @@ const Hero = () => {
                     aboutTxt,
                     { y: 20, opacity: 0 },
                     { y: 0, opacity: 1, duration: .2, ease: "power3.out", }, '>+1')
+                
         }
 
     }, [shouldDraw]);

@@ -4,8 +4,8 @@ import NavBar from "../ui/NavBar";
 import { useSelector } from "react-redux";
 import { MainButton } from "../ui/MainButton";
 
-const SideBar = forwardRef<HTMLDivElement>((props, ref) => {
-    console.log(props)
+const SideBar = forwardRef<HTMLDivElement>((_, ref) => {
+    // console.log(props)
     const loaderPlayed = useSelector((state: any) => state.loader.played);
 
     return (

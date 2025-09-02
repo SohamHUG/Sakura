@@ -1,10 +1,30 @@
 import DraggableCarousel from "./DraggableCarousel"
 import { imagesFood } from "../../data"
+import gsap from "gsap";
+import ScrollSmoother from "gsap/dist/ScrollSmoother";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import { useEffect, useRef } from "react";
+
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 export const About = () => {
+    const sectionRef = useRef<HTMLDivElement>(null)
+
+    useEffect(() => {
+        // const smoother = 
+        ScrollSmoother.create({
+            content: sectionRef.current,
+            smooth: 1,
+            effects: true,
+            normalizeScroll: true
+        });
+
+        // smoother.effects("img", { speed: "auto" });
+    }, []);
+
     return (
-        <section className="bg-black text-white max-w-full flex flex-col gap-60">
-            <article className="flex justify-around items-center">
+        <section ref={sectionRef} id="smooth-content" className="bg-black text-white max-w-full flex flex-col gap-30 py-10">
+            <article className="flex justify-around items-center h-[50vh]">
                 <div className="w-[25%]">
                     <h2 className="uppercase font-kaisei text-2xl mb-2 text-white/90">
                         Le concept
@@ -13,11 +33,11 @@ export const About = () => {
                         Sakura est une invitation à découvrir l’art culinaire japonais dans toute sa finesse. Ici, chaque plat est pensé comme une rencontre entre tradition et modernité
                     </p>
                 </div>
-                <div className="w-[25%] h-auto flex flex-col gap-2">
-                    <div className="h-50">
+                <div className="w-[50%] h-auto flex justify-between">
+                    <div className="h-60" data-speed="1">
                         <img src="/img/img24.jpg" className="h-full w-full object-cover rounded" />
                     </div>
-                    <div className="h-90 w-full rounded overflow-hidden">
+                    <div className="h-90 rounded overflow-hidden" data-speed="1.2">
                         <img src="/img/img27.jpg" className="h-full w-full object-cover object-center" />
                     </div>
                 </div>
@@ -33,13 +53,13 @@ export const About = () => {
                     </p>
                 </div>
                 <div className="w-[25%] h-auto flex flex-col gap-2">
-                    <div className="h-50">
+                    <div className="h-50 " data-speed="1.1">
                         <img src="/img/img3.jpg" className="h-full w-full object-cover rounded" />
                     </div>
-                    <div className="h-70 w-full rounded overflow-hidden">
+                    <div className="h-70 w-full rounded overflow-hidden " data-speed="1.5">
                         <img src="/img/img26.jpg" className="h-full w-full object-cover object-center" />
                     </div>
-                    <div className="h-50 w-full rounded overflow-hidden">
+                    <div className="h-50 w-full rounded overflow-hidden " data-speed="1">
                         <img src="/img/img7.jpg" className="h-full w-full object-cover object-center" />
                     </div>
                 </div>
@@ -55,10 +75,10 @@ export const About = () => {
                     </p>
                 </div>
                 <div className="w-[25%] h-auto flex flex-col gap-2">
-                    <div className="h-50">
+                    <div className="h-50" data-speed="1.2">
                         <img src="/img/img17.jpg" className="h-full w-full object-cover rounded" />
                     </div>
-                    <div className="h-70 w-full rounded overflow-hidden">
+                    <div className="h-70 w-full rounded overflow-hidden " data-speed="1.1">
                         <img src="/img/img33.jpg" className="h-full w-full object-cover object-center" />
                     </div>
                 </div>
@@ -75,7 +95,7 @@ export const About = () => {
                 </div>
 
                 <div className="w-[30%] h-auto flex flex-col gap-2">
-                    <div className="h-full">
+                    <div className="h-full" data-speed="1.1">
                         <img src="/img/img32.jpg" className="h-full w-full object-cover rounded" />
                     </div>
                 </div>
@@ -83,7 +103,7 @@ export const About = () => {
 
             <article className="w-full h-[50vh] overflow-hidden relative">
                 {/* <h2 className="uppercase font-kaisei text-4xl mb-2 text-white/90 m-5">Sakura Restaurant</h2> */}
-                <p className="font-noto text-xl font-extralight text-white/80 m-5">
+                <p className="font-noto text-xl font-extralight text-white/80 m-5" data-speed='1.2'>
                     Retrouvez-nous au 12 Rue des Cerisiers, Paris 75004, et laissez-vous emporter par l’élégance des saveurs japonaises
                 </p>
                 <DraggableCarousel
@@ -100,6 +120,8 @@ export const About = () => {
                 />
 
             </article>
+
+            <div className="w-full h-[85vh]"></div>
         </section>
     )
 }

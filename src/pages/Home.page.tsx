@@ -33,7 +33,7 @@ export default function HomePage() {
             return () => clearTimeout(timer);
         } else {
             setShowLoader(false)
-            setShowLoader(false)
+            // setShowLoader(false)
         }
 
     }, [dispatch]);
@@ -68,9 +68,10 @@ export default function HomePage() {
             )}
 
             <div
+                id="smooth-wrapper"
                 ref={homeRef}
                 className={`bg-black min-w-screen min-h-screen relative z-10 flex flex-col items-center justify-center`}
-                style={{ opacity: loaderPlayed ? 1 : 0 }}
+                style={{ opacity: loaderPlayed ? 1 : 0, }}
             >
                 <div ref={speedIndicatorRef} className="speed-indicator absolute top-2 right-2 text-white opacity-0 text-sm"></div>
 
@@ -78,7 +79,12 @@ export default function HomePage() {
                     <Hero />
 
 
+
                     <About />
+
+                    
+
+
                 </div>
 
                 {/* <div>
