@@ -10,20 +10,6 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 export const MenuPage = () => {
     const dispatch = useDispatch();
-    // const sectionRef = useRef<HTMLDivElement>(null)
-
-    // useEffect(() => {
-    //     ScrollSmoother.create({
-    //         content: '#smooth-menu',
-    //         smooth: 3,
-    //         effects: true,
-    //         normalizeScroll: true
-    //     });
-
-    //     return () => {
-    //         if (ScrollSmoother.get()) ScrollSmoother.get()?.kill();
-    //     };
-    // }, []);
 
     useEffect(() => {
         dispatch(setLoaderPlayed(true));
@@ -31,7 +17,7 @@ export const MenuPage = () => {
 
     return (
 
-        <div className="min-h-screen w-[90%] mx-auto lg:mx-0 lg:w-[70%] lg:ml-auto">
+        <div className="min-h-screen w-full py-15 mx-auto lg:mx-0 lg:w-[70%] lg:ml-auto bg-black">
             <SakuraMenu />
         </div>
 

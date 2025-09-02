@@ -76,7 +76,7 @@ export default function HomePage() {
             >
                 <div ref={speedIndicatorRef} className="speed-indicator absolute top-2 right-2 text-white opacity-0 text-sm"></div>
 
-                <div className="home-container min-h-screen w-[90%] mx-auto lg:mx-0 lg:w-[70%] lg:ml-auto z-11">
+                <div className="home-container min-h-screen w-[90%] mx-auto lg:mx-0 lg:w-[71%] lg:ml-auto z-11">
                     <Hero />
                     <About />
                 </div>

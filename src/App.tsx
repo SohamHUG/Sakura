@@ -4,6 +4,7 @@ import HomePage from "./pages/Home.page";
 import NotFoundPage from "./pages/NotFound.page";
 import ErrorTemplate from "./components/templates/ErrorTemplate";
 import { MenuPage } from "./pages/Menu.page";
+import { ContactPage } from "./pages/ContactPage";
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
         <Route element={<MainTemplate />}>
           <Route path={'/'} element={<HomePage />} />
           <Route path={'/menu'} element={<MenuPage />} />
+          <Route path={'/contact'} element={<ContactPage />} />
         </Route>
 
         <Route element={<ErrorTemplate />}>
