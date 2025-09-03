@@ -89,7 +89,7 @@ export const About = () => {
                 </div>
             </article>
 
-            <article className="w-screen h-[80vh] md:h-[50vh] overflow-hidden relative flex flex-col gap-20 ">
+            <article className="w-screen h-[80vh] md:h-[50vh] overflow-hidden relative flex flex-col gap-20 md:gap-0 ">
                 {/* <h2 className="uppercase font-kaisei text-4xl mb-2 text-white/90 m-5">Sakura Restaurant</h2> */}
                 <p className="font-noto text-xl font-extralight text-white/80 m-5" data-speed='1.2'>
                     Retrouvez-nous au 12 Rue des Cerisiers, Paris 75004, et laissez-vous emporter par l’élégance des saveurs japonaises
