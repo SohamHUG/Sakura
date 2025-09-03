@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 import { MainButton } from "../ui/MainButton";
 
 const SideBar = forwardRef<HTMLDivElement>((_, ref) => {
-    // console.log(props)
     const loaderPlayed = useSelector((state: any) => state.loader.played);
 
     return (
@@ -28,7 +27,6 @@ const SideBar = forwardRef<HTMLDivElement>((_, ref) => {
                         Dimanche: <br />
                         11h-14h30
                     </p>
-                    {/* <a href="#" className="text-main font-kaisei font-bold underline">Réserver une table</a> */}
                     <MainButton>
                         Réserver une table
                     </MainButton>

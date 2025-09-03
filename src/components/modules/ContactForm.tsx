@@ -4,7 +4,7 @@ export default function ContactForm() {
     return (
         <section
             id="contact"
-            className="mx-auto w-xl max-w-2xl px-4 py-16 text-neutral-100 font-serif z-10 h-[90vh]"
+            className="mx-auto w-full md:w-xl max-w-2xl px-4 py-16 text-neutral-100 font-serif z-10 h-[90vh]"
         >
             <h2 className="mb-8 text-2xl font-bold tracking-tight text-white font-kaisei">
                 Contact
@@ -13,12 +13,6 @@ export default function ContactForm() {
             <form className="space-y-3">
                 {/* Nom */}
                 <div>
-                    {/* <label
-                        htmlFor="name"
-                        className="block text-sm font-medium text-neutral-300 mb-1 font-noto"
-                    >
-                        Nom
-                    </label> */}
                     <input
                         type="text"
                         id="name"
@@ -29,12 +23,6 @@ export default function ContactForm() {
 
                 {/* Email */}
                 <div>
-                    {/* <label
-                        htmlFor="email"
-                        className="block text-sm font-medium text-neutral-300 mb-1"
-                    >
-                        Email
-                    </label> */}
                     <input
                         type="email"
                         id="email"
@@ -45,12 +33,6 @@ export default function ContactForm() {
 
                 {/* Sujet */}
                 <div>
-                    {/* <label
-                        htmlFor="subject"
-                        className="block text-sm font-medium text-neutral-300 mb-1"
-                    >
-                        Sujet
-                    </label> */}
                     <input
                         type="text"
                         id="subject"
@@ -61,12 +43,6 @@ export default function ContactForm() {
 
                 {/* Message */}
                 <div>
-                    {/* <label
-                        htmlFor="message"
-                        className="block text-sm font-medium text-neutral-300 mb-1"
-                    >
-                        Message
-                    </label> */}
                     <textarea
                         id="message"
                         rows={5}

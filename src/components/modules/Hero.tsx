@@ -2,9 +2,7 @@ import AnimatedSVG from "./AnimatedSVG"
 import { sakuraKatakana } from "../../data"
 import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
-// import gsap from "gsap";
 import { MainButton } from "../ui/MainButton";
-// import { useTrail } from "../../hooks/useTrail";
 import { GoArrowRight, GoArrowDown } from "react-icons/go";
 import { SecondaryButton } from "../ui/SecondaryButton";
 import { useNavigate } from "react-router-dom";
@@ -15,10 +13,6 @@ const Hero = () => {
     const [shouldDraw, setShouldDraw] = useState(false);
     const loaderPlayed = useSelector((state: any) => state.loader.played);
     const heroRef = useRef<HTMLDivElement>(null);
-    // const heroRef = useRef<HTMLDivElement>(null);
-    // const speedIndicatorRef = useRef<HTMLDivElement>(null);
-
-    // useTrail(heroRef, speedIndicatorRef)
 
     const navigate = useNavigate();
 
@@ -28,24 +22,10 @@ const Hero = () => {
 
 
     useEffect(() => {
-        // const tl = gsap.timeline();
         const headline = heroRef.current?.querySelectorAll<HTMLElement>('.headline') || []
         const button = heroRef.current?.querySelectorAll<HTMLElement>('.button-main') || []
         const buttonSecond = heroRef.current?.querySelectorAll<HTMLElement>('.button-second') || []
         const aboutTxt = heroRef.current?.querySelectorAll<HTMLElement>('.about-txt') || []
-
-        // if (!loaderPlayed) {
-        //     const timer = setTimeout(() => {
-        //         setShouldDraw(true)
-        //     }, 5500);
-
-        //     return () => {
-        //         clearTimeout(timer);
-        //         setShouldDraw(false);
-        //     };
-        // } else {
-        //     setShouldDraw(true)
-        // }
 
         if (loaderPlayed) {
             setShouldDraw(true);
@@ -76,7 +56,7 @@ const Hero = () => {
     }, [loaderPlayed, shouldDraw]);
 
     return (
-        <div ref={heroRef} className="w-full z-11 flex flex-col min-h-screen justify-between">
+        <div ref={heroRef} className="w-[90%] mx-auto md:w-full z-11 flex flex-col min-h-screen justify-between">
 
             <div className="flex flex-1 flex-col gap-5 lg:gap-10 items-center justify-center">
                 {shouldDraw && <AnimatedSVG svg={sakuraKatakana} />}

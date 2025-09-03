@@ -19,7 +19,6 @@ const MainTemplate = () => {
     const navTabletRef = useRef<HTMLDivElement>(null);
     const navMobileRef = useRef<HTMLDivElement>(null);
     const mainRef = useRef<HTMLElement>(null);
-    // const transiRef = useRef<HTMLDivElement>(null);
 
     const loaderPlayed = useSelector((state: any) => state.loader.played);
     const dispatch = useDispatch();

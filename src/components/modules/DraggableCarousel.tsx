@@ -248,15 +248,20 @@ export default function DraggableCarousel({
     }, [items]);
 
     return (
-        <div style={{ width: "100%", overflow: "hidden", position: "relative", height }}>
-            <div ref={containerRef} style={{ display: "flex", height: "100%", alignItems: "center" }}>
+        <div
+            style={{ width: "100%", overflow: "hidden", position: "relative", height }}
+
+        >
+            <div ref={containerRef} className={`w-[10%]`} style={{ display: "flex", height: "100%", alignItems: "center" }}>
                 {items.map((it, i) => (
                     <div
                         key={i}
-                        className="loop-item rounded"
+                        className={`
+                            loop-item rounded
+                            `}
                         style={{
                             flex: `0 0 ${itemWidth}px`,
-                            marginRight: gap,
+                            marginRight: gap - 30,
                             height: height - 20,
                             // background: "#9d7cce",
                             // borderRadius: 12,
